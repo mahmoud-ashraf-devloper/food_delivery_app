@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import { BsFillPersonFill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineHome } from 'react-icons/Ai'
+import { AiOutlineHome } from 'react-icons/ai'
 import { IoIosCloseCircle } from 'react-icons/io'
 
 const navLinks = [
