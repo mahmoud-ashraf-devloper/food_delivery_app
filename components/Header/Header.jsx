@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Image from 'next/image';
 import logo from '../../public/assets/images/res-logo.png'
@@ -45,16 +45,25 @@ const navLinks = [
 const Header = () => {
     const router = useRouter()
     const [nav, setNav] = useState(false);
+    const [shrinkAndShadow, setShrinkAndShadow] = useState(false);
 
     const toggleNav = ()=>{
         setNav(!nav)
     }
 
+    useEffect(()=>{
+
+        const navShrinkAndShowShadow = () =>{
+            (window.scrollY >= 90) ? setShrinkAndShadow(true) : setShrinkAndShadow(false)
+        }
+        window.addEventListener('scroll', navShrinkAndShowShadow)
+    },[])
+
     return (
-        <div className='relative'>
-            <div className='flex md:justify-evenly justify-between mx-6 h-20 items-center'>
-                <div className='flex flex-col items-center  mt-1'>
-                    <Image width={70} height={70} src={logo} alt='/' />
+        <div className='relative '>
+            <div className={shrinkAndShadow ? 'flex mt-0 md:justify-evenly justify-between px-6 items-center fixed shadow w-full bg-slate-50 z-50' : 'flex mt-0 md:justify-evenly justify-between px-6 items-center fixed h-20 w-full bg-slate-50 z-50'}>
+                <div className='flex space-x-3 items-center  py-2'>
+                    <Image width={55} height={55} src={logo} alt='/' />
                     <p className='font-bold text-sm hidden md:flex'>Testy Treat</p>
                 </div>
                 <ul className='md:flex hidden space-x-6 font-bold'>
@@ -74,7 +83,7 @@ const Header = () => {
             </div>
             <div className={nav ? 'block transition-opacity ease-in duration-500' : 'hidden transition-opacity ease-in duration-300'}>
                 <div className='bg-gray-600 opacity-40 z-10 h-screen absolute inset-0'></div>
-                <div className='absolute right-20S inset-0 w-1/2 z-20 bg-red-100 text-slate-600 h-screen'>
+                <div className='absolute right-20 inset-0 w-1/2 z-20 bg-red-100 text-slate-600 h-screen'>
                     <div className='flex justify-between my-6 mx-4 '>
                         <Image width={70} height={70} src={logo} alt='/' />
                         <span onClick={toggleNav} className='flex justify-center items-center cursor-pointer hover:brightness-125'><IoIosCloseCircle className='w-8 h-8 text-red-600' /></span>
