@@ -29,7 +29,7 @@ const Testimonial = () => {
                         <p className='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequatur cum, error molestias hic animi fugit reiciendis possimus vel magni!</p>
                     </div>
                     
-                    <div className='w-[350px] mt-8'>
+                    <div className='w-[500px] lg:w-[700px] mt-8'>
                         <Slider {...settings}> 
                             <div className='flex flex-col items-center'>
                                 <q className='font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora dignissimos ea accusamus itaque molestiae. Quae rem adipisci, soluta officiis modi accusantium tempora sapiente similique?</q>

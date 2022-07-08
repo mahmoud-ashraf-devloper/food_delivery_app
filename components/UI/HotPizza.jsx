@@ -7,7 +7,6 @@ const HotPizza = () => {
     useEffect(()=>{
         const filtered = AllProducts.filter(product => product.category == 'Pizza')
         setHotPizza(filtered)
-        console.log(filtered);
     },[])
 
     return (

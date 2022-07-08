@@ -4,9 +4,11 @@ import Image from 'next/image';
 import logo from '../../public/assets/images/res-logo.png'
 import { useRouter } from 'next/router'
 
+import { useSelector } from 'react-redux';
+
 import { BsFillPersonFill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineHome } from 'react-icons/ai'
+import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { IoIosCloseCircle } from 'react-icons/io'
 
 const navLinks = [
@@ -47,6 +49,10 @@ const Header = () => {
     const [nav, setNav] = useState(false);
     const [shrinkAndShadow, setShrinkAndShadow] = useState(false);
 
+    const totalQuantity = useSelector(state => state.cart.totalQuantity)
+
+    console.log("total:",totalQuantity);
+
     const toggleNav = ()=>{
         setNav(!nav)
     }
@@ -74,8 +80,8 @@ const Header = () => {
                 </ul>
                 <div className='flex space-x-4'>
                     <div className='relative'>
-                        <AiOutlineHome className='w-6 h-6 cursor-pointer ' />
-                        <p className='absolute -top-2 -right-2 text-white bg-red-600 w-4 h-6 flex items-center p-1 rounded-full'>6</p>
+                        <HiOutlineShoppingCart className='w-6 h-6 cursor-pointer ' />
+                        <p className='absolute -top-2 -right-2 text-white bg-red-600 w-4 h-6 flex items-center p-1 rounded-full'>{totalQuantity}</p>
                     </div>
                     <BsFillPersonFill className='w-6 h-6 cursor-pointer ' />
                     <GiHamburgerMenu onClick={toggleNav} className='w-6 h-6 cursor-pointer md:hidden ' />
