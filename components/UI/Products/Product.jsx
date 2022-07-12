@@ -10,7 +10,6 @@ const Product = ({item}) => {
     const itemData = {...item, quantity: 1};
     const addToCart = () => {
         dispatch(addItem(itemData))
-        console.log(store.getState());
     }
     return (
 
