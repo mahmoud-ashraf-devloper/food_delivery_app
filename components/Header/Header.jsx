@@ -4,12 +4,13 @@ import Image from 'next/image';
 import logo from '../../public/assets/images/res-logo.png'
 import { useRouter } from 'next/router'
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 
 import { BsFillPersonFill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { IoIosCloseCircle } from 'react-icons/io'
+import {store}  from '../../store/store';
 
 const navLinks = [
     {
@@ -50,15 +51,12 @@ const Header = () => {
     const [shrinkAndShadow, setShrinkAndShadow] = useState(false);
 
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
-
-    console.log("total:",totalQuantity);
-
+    
     const toggleNav = ()=>{
         setNav(!nav)
     }
 
     useEffect(()=>{
-
         const navShrinkAndShowShadow = () =>{
             (window.scrollY >= 90) ? setShrinkAndShadow(true) : setShrinkAndShadow(false)
         }

@@ -1,17 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import store from '../../../store/store';
+import { addItem } from '../../../store/slices/cartSlice';
+import { useDispatch, useSelector } from 'react-redux'
 
-import { useDispatch } from 'react-redux';
-import { cartActions } from './../../../store/slices/shoppingCart';
 
 const Product = ({item}) => {
-    const dispatch = useDispatch()
-    const { id, title, image01, price } = item
-
+    const dispatch = useDispatch();
+    const itemData = {...item, quantity: 1};
     const addToCart = () => {
-        dispatch(cartActions.addItem({
-            id, title, image01, price
-        }))
+        dispatch(addItem(itemData))
+        console.log(store.getState());
     }
     return (
 
