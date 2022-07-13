@@ -51,7 +51,7 @@ const Header = () => {
 
     return (
         <div className='w-full'>
-            <div className={shrinkAndShadow ? 'flex px-20 justify-between  items-center fixed shadow w-full bg-slate-50 z-50' : ' flex  justify-between px-20 items-center fixed h-20 w-full bg-slate-50 z-50'}>
+            <div className={shrinkAndShadow ? 'flex md:px-20 px-4 justify-between  items-center fixed shadow w-full bg-slate-50 z-50' : ' flex  justify-between md:px-20 px-4 items-center fixed h-20 w-full bg-slate-50 z-50'}>
                 <Link href='/'>
                     <div className='flex space-x-3 items-center cursor-pointer py-2'>
                         <Image width={55} height={55} src={logo} alt='/' />
