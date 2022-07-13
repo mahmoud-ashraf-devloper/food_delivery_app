@@ -37,7 +37,7 @@ const Cart = ({ item }) => {
                                         <div className="flow-root">
                                             <ul role="list" className="-my-6 divide-y divide-gray-200">
                                                 
-
+                                                { cart.items.length === 0 ? <div className="text-center bg-gray-200">Add To Cart To Proceed To Checkout</div> : null}
                                                 {cart.items.map(item => <CartItem key={item.id} item={item} />)}
                                             </ul>
                                         </div>
