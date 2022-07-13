@@ -10,26 +10,11 @@ import { BsFillPersonFill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { IoIosCloseCircle } from 'react-icons/io'
-import {store}  from '../../store/store';
+import { store } from '../../store/store';
 import { toggleCart } from '../../store/slices/cartUiSlice';
 
 const navLinks = [
-    {
-        display: 'Home',
-        path: '/',
-    },
-    {
-        display: 'About',
-        path: '/about',
-    },
-    {
-        display: 'Contact',
-        path: '/contact',
-    },
-    {
-        display: 'Checkout',
-        path: '/checkout',
-    },
+
     {
         display: 'Login',
         path: '/login',
@@ -38,10 +23,7 @@ const navLinks = [
         display: 'Register',
         path: '/register',
     },
-    {
-        display: 'Cart',
-        path: '/cart',
-    },
+
 ]
 
 
@@ -54,39 +36,41 @@ const Header = () => {
     const showCart = useSelector(state => state.cartUi.showCart);
     const dispatch = useDispatch();
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
-    
-    const toggleNav = ()=>{
+
+    const toggleNav = () => {
         setNav(!nav)
     }
 
 
-    useEffect(()=>{
-        const navShrinkAndShowShadow = () =>{
+    useEffect(() => {
+        const navShrinkAndShowShadow = () => {
             (window.scrollY >= 90) ? setShrinkAndShadow(true) : setShrinkAndShadow(false)
         }
         window.addEventListener('scroll', navShrinkAndShowShadow)
-    },[])
+    }, [])
 
     return (
-        <div className='relative '>
-            <div className={shrinkAndShadow ? 'flex mt-0 md:justify-evenly justify-between px-6 items-center fixed shadow w-full bg-slate-50 z-50' : 'flex mt-0 md:justify-evenly justify-between px-6 items-center fixed h-20 w-full bg-slate-50 z-50'}>
-                <div className='flex space-x-3 items-center  py-2'>
-                    <Image width={55} height={55} src={logo} alt='/' />
-                    <p className='font-bold text-sm hidden md:flex'>Testy Treat</p>
-                </div>
-                <ul className='md:flex hidden space-x-6 font-bold'>
+        <div className='w-full'>
+            <div className={shrinkAndShadow ? 'flex px-20 justify-between  items-center fixed shadow w-full bg-slate-50 z-50' : ' flex  justify-between px-20 items-center fixed h-20 w-full bg-slate-50 z-50'}>
+                <Link href='/'>
+                    <div className='flex space-x-3 items-center cursor-pointer py-2'>
+                        <Image width={55} height={55} src={logo} alt='/' />
+                        <p className='font-bold text-sm hidden md:flex'>Testy Treat</p>
+                    </div>
+                </Link>
 
-                    {
-                        navLinks.map((link, index) => <li className={router.pathname == link.path ? 'text-red-600' : ''} key={index} ><Link href={link.path} alt='/'>{link.display}</Link></li>)
-                    }
-                </ul>
                 <div className='flex space-x-4'>
                     <div className='relative'>
-                        <HiOutlineShoppingCart onClick={()=>dispatch(toggleCart())} className='w-6 h-6 cursor-pointer ' />
+                        <HiOutlineShoppingCart onClick={() => dispatch(toggleCart())} className='w-6 h-6 cursor-pointer ' />
                         <p className='absolute -top-2 -right-2 text-white bg-red-600 w-4 h-6 flex items-center p-1 rounded-full'>{totalQuantity}</p>
                     </div>
                     <BsFillPersonFill className='w-6 h-6 cursor-pointer ' />
                     <GiHamburgerMenu onClick={toggleNav} className='w-6 h-6 cursor-pointer md:hidden ' />
+                    <ul className='md:flex hidden space-x-6 font-bold'>
+                    {
+                        navLinks.map((link, index) => <li className={router.pathname == link.path ? 'text-red-600' : ''} key={index} ><Link href={link.path} alt='/'>{link.display}</Link></li>)
+                    }
+                </ul>
                 </div>
             </div>
             <div className={nav ? 'block transition-opacity ease-in duration-500 ' : 'hidden transition-opacity ease-in duration-300 '}>
