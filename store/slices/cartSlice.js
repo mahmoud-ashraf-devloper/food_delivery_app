@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
-    items:[],
+    items: [],
     totalQuantity: 0,
     totalPrice: 0
 };
 
-export const cartSlice  = createSlice({
+export const cartSlice = createSlice({
     name: 'cart',
 
     initialState: initialState,
@@ -32,46 +32,45 @@ export const cartSlice  = createSlice({
                         itemExists = true;
                     }
                 })
-                if(!itemExists){
+                if (!itemExists) {
                     state.items.push(action.payload);
                     state.totalQuantity++;
                     state.totalPrice += action.payload.price;
                 }
             }
-        }
-    },
-    removeItem: (state, action) => {
-        state.items.forEach(item => {
-            if (item.id === action.payload.id) {
-                item.quantity--;
-                state.totalQuantity--;
-                state.totalPrice -= action.payload.price;
-                state.items = state.items.filter(item => item.id !== action.payload.id);
+        },
+        removeItem: (state, action) => {
+            state.items.forEach(item => {
+                if (item.id === action.payload.id) {
+                    state.totalQuantity--;
+                    state.totalPrice -= action.payload.price;
+                    state.items = state.items.filter(item => item.id !== action.payload.id);
+                }
             }
-        }
-        )
-    },
-    increaseQuantity: (state, action) => {
-        state.items.forEach(item => {
-            if (item.id === action.payload.id) {
-                item.quantity++;
-                state.totalQuantity++;
-                state.totalPrice += item.price;
+            )
+        },
+        increaseQuantity: (state, action) => {
+            state.items.forEach(item => {
+                if (item.id === action.payload.id) {
+                    item.quantity++;
+                    state.totalQuantity++;
+                    state.totalPrice += item.price;
+                }
             }
-        }
-        )
-    },
-    decreaseQuantity: (state, action) => {
-        state.items.forEach(item => {
-            if (item.id === action.payload.id) {
-                item.quantity--;
-                state.totalQuantity--;
-                state.totalPrice -= item.price;
+            )
+        },
+        decreaseQuantity: (state, action) => {
+            state.items.forEach(item => {
+                if (item.id === action.payload.id) {
+                    item.quantity--;
+                    state.totalQuantity--;
+                    state.totalPrice -= item.price;
+                }
             }
+            )
         }
-        )
     }
 });
 
 export const { addItem, decreaseQuantity, increaseQuantity, removeItem } = cartSlice.actions;
-export default  cartSlice.reducer;
+export default cartSlice.reducer;

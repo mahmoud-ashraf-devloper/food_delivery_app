@@ -28,9 +28,9 @@ export default function Home() {
       {showCart ? <Cart /> : null}
 
       <div className='max-w-[1240px] md:mx-auto grid items-center md:grid-cols-2 mx-3  min-h-screen'>
-        <div className='md:mt-20 mt-10'>
+        <div className='md:mt-20 mt-10 leading-loose'>
           <h1 className='uppercase text-2xl font-bold tracking-widest '>Easy Way To make an order</h1>
-          <p className='text-6xl font-bold py-10 '><span className='text-red-600'>Hungry?</span> Just Wait Food At <span className='text-red-600'>Your Door.</span></p>
+          <p className='text-6xl font-bold py-10 leading-snug'><span className='text-red-600'>Hungry?</span> Just Wait Food At <span className='text-red-600'>Your Door.</span></p>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid.</p>
           <div className='my-6 flex space-x-10'>
             <button className='px-4 py-3 text-white font-bold  bg-red-600 rounded-xl hover:bg-slate-900 flex items-center justify-center'>Order now <FaGreaterThan className='ml-3' /></button>
