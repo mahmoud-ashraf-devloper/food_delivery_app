@@ -17,13 +17,13 @@ export default function Home() {
   const showCart = useSelector(state => state.cartUi.showCart);
   
   return (
-    <div className='relative'>
+    <div className='relative '>
       
       {showCart ? <Cart /> : null}
 
-      <div className='max-w-[1240px] md:mx-auto grid items-center md:grid-cols-2 mx-3  min-h-screen'>
+      <div className='max-w-[1240px] grid items-center md:grid-cols-2 mx-3 min-h-screen'>
         <div className='md:mt-20 mt-10 leading-loose'>
-          <h1 className='uppercase text-2xl font-bold tracking-widest '>Easy Way To make an order</h1>
+          <h1 className='uppercase md:text-2xl text-xl font-bold tracking-widest pt-20'>Easy Way To make an order</h1>
           <p className='text-6xl font-bold py-10 leading-snug'><span className='text-red-600'>Hungry?</span> Just Wait Food At <span className='text-red-600'>Your Door.</span></p>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid.</p>
           <div className='my-6 flex space-x-10'>

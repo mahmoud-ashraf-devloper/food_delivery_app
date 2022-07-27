@@ -8,3 +8,7 @@
         @apply bg-slate-50 text-slate-900
     }
 }
+
+*{
+    border: 1p x solid white;
+}
