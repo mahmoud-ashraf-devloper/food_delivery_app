@@ -10,10 +10,10 @@ import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 const Footer = () => {
     return (
-        <div className='w-full min-h-[400px] bg-red-100 flex justify-center items-center'>
-            <div className='max-w-[1240px] mx-auto w-full '>
-                <div className="grid lg:grid-cols-4 gap-6 md:grid-cols-2 mx-4">
-                    <div className="col-span-1 flex flex-col my-6 md:my-0 md:justify-start md:items-start justify-center items-center">
+        <div className='min-h-[400px] w-full  bg-red-100 flex justify-center items-center'>
+            <div className='max-w-[1240px] px-8 mx-auto w-full '>
+                <div className="w-full grid lg:grid-cols-4 gap-6 md:grid-cols-2 mx-4">
+                    <div className=" col-span-1 flex flex-col my-6 md:my-0 md:justify-start md:items-start justify-center items-center">
                             <Image width={70} height={70} src={logo} alt='/' />
                             <p className='font-bold text-sm my-2'>Testy Treat</p>
                         <p>Lorem ipsum, dolor sit amet csoom vel.</p>

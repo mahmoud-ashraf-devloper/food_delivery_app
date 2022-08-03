@@ -20,11 +20,11 @@ const Testimonial = () => {
         slidesToScroll: 1
       };
     return (
-        <div className='max-w-[1240px] mx-auto flex items-center min-h-screen justify-center'>
+        <div className='max-w-[1240px] pt-8 mx-auto flex items-center min-h-screen justify-center'>
             <div className=' grid md:grid-cols-5 gap-6 place-items-center px-3'>
                 <div className="col-span-3 ">
                     <div>
-                        <h1 className='text-red-600 text-xl font-bold'>Testimonial</h1>
+                        <h1 className='text-red-600 text-3xl uppercase font-bold'>Testimonial</h1>
                         <p className='text-5xl font-bold my-4'>The opinion Of our <span className='text-red-600'>customers</span></p>
                         <p className='mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequatur cum, error molestias hic animi fugit reiciendis possimus vel magni!</p>
                     </div>

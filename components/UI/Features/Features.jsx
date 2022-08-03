@@ -25,8 +25,8 @@ const featuresData = [
 
 const Features = () => {
     return (
-        <div className='max-w-[1240px] mx-auto min-h-screen flex flex-col items-center'>
-            <div className='flex flex-col justify-center items-center'>
+        <div className='max-w-[1240px] w-full mx-auto min-h-screen flex flex-col items-center'>
+            <div className='w-full flex flex-col justify-center items-center'>
                 <h1 className='py-8 text-red-600 text-xl font-bold uppercase tracking-widest'>What We Serve</h1>
                 <span className=' md:text-5xl text-3xl font-bold'>Just Set Home</span>
                 <span className='py-2 md:text-5xl text-3xl font-bold'>We Will <span className='text-red-600'>Take Care</span></span>
@@ -35,7 +35,7 @@ const Features = () => {
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, sequi vero.</span>
                 </div>
             </div>
-            <div className='grid md:grid-cols-3 gap-8 py-14 mx-3'>
+            <div className='w-full grid md:grid-cols-3 gap-8 py-14 mx-3'>
 
                 {
                     featuresData.map((feature, index) =>

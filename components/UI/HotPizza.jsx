@@ -10,9 +10,9 @@ const HotPizza = () => {
     },[])
 
     return (
-        <div className="max-w-[1240px] mx-auto">
+        <div className="w-full max-w-[1240px] mx-auto">
             <h1 className='text-4xl text-center text-red-600 font-bold my-8 mb-14'>Hot Pizza</h1>
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="w-full grid md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {
                     hotPizza.map(product => (<Product key={product.id} item={product}/>))
                 }

@@ -49,10 +49,10 @@ const Products = () => {
         }
     }
     return (
-        <div className='max-w-[1240px] mx-auto min-h-screen'>
+        <div className='max-w-[1240px]  mx-auto min-h-screen'>
             
             <h1 className="text-center text-3xl font-bold uppercase tracking-widest py-8">Popular Food </h1>
-            <div className="my-3 mx-3 px-2 flex justify-center items-center h-16 rounded-xl text-white bg-red-500">
+            <div className="w-full my-3 mx-3 px-2 flex justify-center items-center h-16 rounded-xl text-white bg-red-500">
                 {filters.map((filter, index) =>
                     <div onClick={() => { doFilter(filter)}} key={index} className={filter.id === currentFilter.id? "font-bold cursor-pointer flex justify-center items-center mx-4 bg-white text-red-600 px-3 py-1 rounded-lg text-center" : "font-bold cursor-pointer flex justify-center items-center mx-4"}>
     
@@ -62,7 +62,7 @@ const Products = () => {
                     </div>
                 )}
             </div>
-            <div className='grid md:grid-cols-3 gap-6 lg:grid-cols-4 my-6 mx-3'>
+            <div className=' w-full grid md:grid-cols-3 gap-6 lg:grid-cols-4 my-6 mx-3'>
     
                 {
                     allProducts.map((item, index) =>

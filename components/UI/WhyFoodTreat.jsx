@@ -4,13 +4,13 @@ import LocationImage from '../../public/assets/images/location.png'
 import { FaCheck } from 'react-icons/fa'
 const WhyFoodTreat = () => {
     return (
-        <div className='max-w-[1240px] mx-auto min-h-screen flex items-center'>
-            <div className='grid md:grid-cols-5 gap-6 items-center'>
+        <div className='max-w-[1240px] w-full mx-auto min-h-screen flex items-center'>
+            <div className='w-full md:grid md:grid-cols-5 gap-6 items-center'>
                 <div className='col-span-3 '>
                     <Image className='' src={LocationImage} alt='/' />
                 </div>
-                <div className='col-span-2 px-8 md:px-0'>
-                    <h1 className='font-bold text-5xl'>Why to <span className='text-red-600'>chose us?</span></h1>
+                <div className='w-full col-span-2 px-8 md:px-0'>
+                    <h1 className='font-bold md:text-5xl text-2xl whitespace-nowrap'>Why to <span className='text-red-600'>chose us?</span></h1>
                     <p className='my-8 text-sm text-slate-600'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, minus autem amet aliquam optio id hic tempora consectetur ea sint!</p>
                     <div className=' my-4'>
                         <div className='flex '>
