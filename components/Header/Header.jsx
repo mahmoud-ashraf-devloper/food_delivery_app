@@ -60,10 +60,10 @@ const Header = () => {
                 </Link>
 
                 <div className='flex space-x-4'>
-                    <div className='relative'>
-                        <HiOutlineShoppingCart onClick={() => dispatch(toggleCart())} className='w-6 h-6 cursor-pointer ' />
+                    <button onClick={() => dispatch(toggleCart())} className='relative'>
+                        <HiOutlineShoppingCart className='w-6 h-6 cursor-pointer ' />
                         <p className='absolute -top-2 -right-2 text-white bg-red-600 w-4 h-6 flex items-center p-1 rounded-full'>{totalQuantity}</p>
-                    </div>
+                    </button>
                     <BsFillPersonFill className='w-6 h-6 cursor-pointer ' />
                     <GiHamburgerMenu onClick={toggleNav} className='w-6 h-6 cursor-pointer md:hidden ' />
                     <ul className='md:flex hidden space-x-6 font-bold'>

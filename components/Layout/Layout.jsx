@@ -3,8 +3,11 @@ import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import  Head  from 'next/head';
+import Cart from './../UI/Cart/Cart';
+import { useSelector } from 'react-redux';
 
 const Layout = ({ children }) => {
+    const showCart = useSelector((state) => state.cartUi.showCart);
     return (
         <div className=' md:w-full w-[160vw]'>
             <Head> 
@@ -14,6 +17,7 @@ const Layout = ({ children }) => {
                 <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
             </Head>
+            {showCart ? <Cart /> : null}
             <Header />
 
             {children}

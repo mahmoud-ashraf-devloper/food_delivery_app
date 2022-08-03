@@ -10,15 +10,11 @@ import Products from "../components/UI/Products/Products";
 import WhyFoodTreat from "../components/UI/WhyFoodTreat";
 import HotPizza from "../components/UI/HotPizza";
 import Testimonial from "../components/UI/Testimonial";
-import Cart from "../components/UI/Cart/Cart";
-import { useSelector } from "react-redux";
-
 export default function Home() {
-  const showCart = useSelector((state) => state.cartUi.showCart);
+  
 
   return (
     <div className="relative md:w-full w-[160vw]">
-      {showCart ? <Cart /> : null}
 
       <div className="max-w-[1240px] w-full flex flex-col md:flex-row items-center px-6 mx-auto min-h-screen">
         <div className="w-full md:mt-20 mt-10 leading-loose">
